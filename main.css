@@ -1,29 +1,85 @@
 body{
     margin: 0%;
     height: 100vh;
-    background-color: rgb(17, 9, 85);
+    background-color: rgb(106, 185, 123);
 }
-.body-wrapper{
+.container{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
+    user-select: none;
     width: 100%;
 }
-.pokemon-image{
+.poke-screen{
     height: 500px;
     width: 400px;
     border-radius: 12px;
-    background-color: rgb(236, 215, 215);
-}
-.pokemon-info{
-    height: 200px;
-    width: 300px;
-    background-color: black;
-    color:black;
+    background-color: rgb(105, 126, 82);
+    /* overflow: hidden; */
 }
 legend{
     display: flex;
+    font-size: larger;
     justify-content: center;
+    color: black;
     font-family: 'Poppins', sans-serif;
+    background-color: rgb(207, 203, 203);
+    height: max-content;
+    width: 45%;
+    border-radius: 10px;
+}
+#poke-nombre{
+    height: max-content;
+   
+}
+#move{
+    height: max-content;
+    margin-top: 10px;
+}
+.image-container{
+    margin-top: 75px;
+    display: flex;
+    justify-content: center;
+}
+.image-wrapper{
+    height: max-content;
+    width: max-content;
+    border-radius: 10px;
+    overflow: hidden;
+    justify-content: center;
+    background-color: rgb(207, 203, 203);
+}
+.info-container{
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30px;
+}
+#button-container{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+#load-next{
+    border-radius: 10px;
+    color: rgb(17, 34, 192);
+    border:none;
+    height: 95px;
+    width: 195px;
+    transition: 0.1s;
+    font-size: 24px;
+    box-shadow: 0px 0px 8px rgb(14, 10, 10);  
+    text-align: center;
+    font-family: 'Pokemon Solid', sans-serif;
+    background-color: rgb(221, 218, 25);
+}
+#load-next:active{
+    height: 90px;
+    width: 185px;
+    font-size: 22px;
 }

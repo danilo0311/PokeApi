@@ -6,31 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link href="http://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="App.js"></script>
     <title>PokeApi</title>
 </head>
 <body>
-    <div class="body-wrapper">
-        <div class="pokemon-image">
-            <legend>PokeApi</legend>
-            <div id="pokemon_info"></div>
+    <div class="container">
+        <div class="poke-screen">
+            <div class="image-container">
+                <div class="image-wrapper">
+                    <img id="poke-image">
+                    </div>
+                </div>
+            <div class="info-container">
+                    <legend id="poke-nombre"></legend>
+                    <legend id="move">TEST</legend>
+                </div>
+            <div id="button-container">
+                <button id="load-next">Pokemon Go!</button>  
+                </div>  
             </div>
         </div>
-    <script>
-
-        $.get("https://pokeapi.co/api/v2/pokemon?limit=10", function(datos){
-            console.log(datos);
-            pokemons=datos.results;
-            pokemons.map(function(pokemon){
-                $(".pokemon_info").append("<div>+pokemon.name+"+"</div>");
-            });
-        });
-
-        function listadoPokemon(id, pokemon){
-            numero=pokemon.url.split("/");
-            $(id).append("<img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png' />");
-        }
-        </script>
 </body>
 </html>
