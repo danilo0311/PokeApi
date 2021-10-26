@@ -1,0 +1,29 @@
+body{
+    margin: 0%;
+    height: 100vh;
+    background-color: rgb(17, 9, 85);
+}
+.body-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.pokemon-image{
+    height: 500px;
+    width: 400px;
+    border-radius: 12px;
+    background-color: rgb(236, 215, 215);
+}
+.pokemon-info{
+    height: 200px;
+    width: 300px;
+    background-color: black;
+    color:black;
+}
+legend{
+    display: flex;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+}
