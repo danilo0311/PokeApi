@@ -20,6 +20,9 @@ sortPokemon = () => {
     getImage(id);
     getName(id);
     pokemonAttack(id);
+    hiddePokeball();
+    pokemonType(id);
+    pokemonAbility(id);
 }
 
 getName = (id) => {
@@ -27,7 +30,7 @@ getName = (id) => {
     .then((response) => {
         response.json()
         .then(function(pokemon){
-            document.getElementById('poke-nombre').innerHTML=pokemon.name;
+            document.getElementById('poke-nombre').innerHTML="Name: "+pokemon.name.charAt(0).toUpperCase()+pokemon.name.substring(1);
         })
     })
     
@@ -49,18 +52,49 @@ pokemonAttack = (id) => {
     .then((response) => {
         response.json()
         .then(function(pokemon){
-            document.getElementById('move').innerHTML=pokemon.moves[0].move.name;
+            document.getElementById('move').innerHTML="Attack: "+pokemon.moves[0].move.name.charAt(0).toUpperCase()+pokemon.moves[0].move.name.substring(1);
         })
     })
+}
+
+pokemonType = (id) => {
+    fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+    .then((response) => {
+        response.json()
+        .then(function(pokemon){
+            document.getElementById('poke-type').innerHTML="Type: "+pokemon.types[0].type.name;
+        })
+    })
+}
+
+pokemonAbility = (id) =>{
+    fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+    .then((response) => {
+        response.json()
+        .then(function(pokemon){
+           let s =  document.getElementById('poke-ability').innerHTML="Ability: "+pokemon.abilities[0].ability.name;
+            console.log(s);
+        })
+    })
+}
+
+hiddePokeball = () => {
+    document.getElementsByClassName('pokeball')[0].style.display='none';
 }
 
 jsonContent = () => {
 
     fetch(`https://pokeapi.co/api/v2/pokemon/${randomNumber()}`)
     .then((response) => {
+        if (response.status == 200) {
+            console.log("Current Status: "+response.status);
+        } else {
+            console.log("Current status: Fail");    
+        }
+        
         response.json()
         .then(function(pokemon){
-            console.log(pokemon.location_area_encounters);
+            // console.log("Current Status: "+pokemon.status);
         })
     })
 }
