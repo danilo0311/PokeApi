@@ -42,13 +42,16 @@ legend{
     display: flex;
     justify-content: center;
 }
-.image-wrapper{
+.poke-images{
     height: max-content;
     width: max-content;
     border-radius: 10px;
     overflow: hidden;
     justify-content: center;
     background-color: rgb(207, 203, 203);
+}
+.poke-images:nth-child(2){
+    margin-left: 15px;
 }
 .info-container{
     height: 100px;

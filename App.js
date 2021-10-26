@@ -1,7 +1,10 @@
 // NOTA: uso el setTimeout por los tiempos de ejecución 
+
 window.setTimeout(function(){
     document.getElementById('load-next').addEventListener('click', sortPokemon);
 });
+
+// NOTA: return tiene valor de 1 en caso de ser 0 por que ese pokemon no existe
 
 randomNumber = () => {
     let idPokemon = Math.floor(Math.random() * 118);
@@ -16,6 +19,7 @@ sortPokemon = () => {
 
     getImage(id);
     getName(id);
+    pokemonAttack(id);
 }
 
 getName = (id) => {
@@ -34,17 +38,29 @@ getImage = (id) => {
     .then((response) => {
         response.json()
         .then(function(pokemon){
-            document.getElementById('poke-image').setAttribute("src", pokemon.sprites.front_default);
+            document.getElementById('poke-image-front').setAttribute("src", pokemon.sprites.front_default);
+            document.getElementById('poke-image-back').setAttribute("src", pokemon.sprites.back_default);
         })
     })
 }
 
-jsonValues = () => {
-    fetch(`https://pokeapi.co/api/v2/pokemon/${1}`)
+pokemonAttack = (id) => {
+    fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
     .then((response) => {
         response.json()
         .then(function(pokemon){
-            alert(pokemon.moves[0].move.name);
+            document.getElementById('move').innerHTML=pokemon.moves[0].move.name;
+        })
+    })
+}
+
+jsonContent = () => {
+
+    fetch(`https://pokeapi.co/api/v2/pokemon/${randomNumber()}`)
+    .then((response) => {
+        response.json()
+        .then(function(pokemon){
+            console.log(pokemon.location_area_encounters);
         })
     })
 }
