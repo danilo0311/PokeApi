@@ -17,6 +17,7 @@ body{
     border-radius: 12px;
     background-color: rgb(105, 126, 82);
     /* overflow: hidden; */
+    box-shadow: 0px 0px 8px rgb(14, 10, 10); 
 }
 legend{
     display: flex;
@@ -60,7 +61,7 @@ legend{
     margin-left: 15px;
 }
 .info-container{
-    height: 100px;
+    height: max-content;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -99,48 +100,45 @@ legend{
        -moz-box-sizing: border-box;
             box-sizing: border-box;
 }
-.pokeball-wrapper
-{
+.pokeball-wrapper{
     position: absolute;
     top: 168px;
     left: 50%;
-
-   transform: translate(-50%, -50%);
-
+    transform: translate(-50%, -50%);
 }
 
 .pokeball {
-  width: 60px;
-  height: 60px;
-  background-color: #fff;
-  border-radius: 50% ;
-  position: relative;
-  overflow: hidden;
-  border: 3px solid;
-  animation: frames .8s  linear 0s infinite;
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    border-radius: 50% ;
+    position: relative;
+    overflow: hidden;
+    border: 3px solid;
+    animation: frames .8s  linear 0s infinite;
 }
 
 .pokeball:after{
-  content: '';
-  position: absolute;
-  width: 60px;
-  height: 30px;
-  background-color: red;
-  border-bottom: 4px solid;
-  top: -4px
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 30px;
+    background-color: red;
+    border-bottom: 4px solid;
+    top: -4px
 }
 
 .pokeball:before{
-  content: '';
-  position: absolute;
-  background-color: #fff;
-  width: 10px;
-  height:10px;
-  border: 4px solid;
-  border-radius: 50%;
-  bottom: 18px;
-  right: 18px;
-  z-index: 1;
+    content: '';
+    position: absolute;
+    background-color: #fff;
+    width: 10px;
+    height:10px;
+    border: 4px solid;
+    border-radius: 50%;
+    bottom: 18px;
+    right: 18px;
+    z-index: 1;
 }
 
 /* AnimationFrames */
